@@ -2,7 +2,7 @@ import React from 'react'
 import Flower from './svg/flower'
 
 interface FieldProps {
-  value: string
+  value?: string
   onChange: Function
 }
 

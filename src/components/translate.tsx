@@ -54,10 +54,15 @@ const debounce = (fn: any) => {
 }
 
 const doTranslation = debounce(
-  async (input: any, languageCode: any, cancelToken: any, callback: any) => {
+  async (
+    input: string,
+    languageCode: string,
+    cancelToken: any,
+    callback: any
+  ) => {
     try {
       const {data} = await axios.post(
-        'https://translation.googleapis.com/language/translate/v2?key=AIzaSyCf0Xy0OnhxlduyEt3K8zP-sOuu-l_u6uA',
+        `https://translation.googleapis.com/language/translate/v2?key=${process.env.REACT_APP_GOOGLE_API_KEY}`,
         {
           q: input,
           target: languageCode,
